@@ -1,35 +1,597 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080d1b"><meta name="description" content="Hosnatul Ferdous — Computer Science student exploring AI, data, cybersecurity and digital innovation.">
-<title>Hosnatul Ferdous | 3D Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js"}}</script>
-</head><body><div class="grain"></div>
-<header><a class="logo" href="#home"><b>H<span>.</span></b> HOSNATUL FERDOUS</a><button id="menu" aria-label="Toggle menu">☰</button><nav id="nav"><a href="#about">About</a><a href="#focus">Interests</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a class="nav-cta" href="#contact">Let's connect ↗</a></nav></header>
-<main>
-<section class="hero wrap" id="home"><div class="hero-copy reveal"><div class="eyebrow"><i></i> COMPUTER SCIENCE · DIGITAL INNOVATION</div><h1>Curious mind.<br><span class="grad">Purposeful<br class="mobile"> technology.</span></h1><p class="intro">I'm <strong>Hosnatul Ferdous</strong>, a Computer Science student exploring how AI, data, and emerging technologies can help solve meaningful real-world problems.</p><div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn outline" href="assets/Hosnatul_Ferdous_CV.pdf" download>Download CV ↓</a></div><div class="stats"><div><b>3.70<span>/4.00</span></b><small>CGPA</small></div><i></i><div><b>2027</b><small>Expected graduation</small></div><i></i><div><b>Dhaka</b><small>Bangladesh</small></div></div></div>
-<div class="stage reveal" id="stage"><canvas id="scene"></canvas><div class="orbit o1"></div><div class="orbit o2"></div><div class="portrait"><img src="assets/profile.jpg" alt="Portrait of Hosnatul Ferdous"><span>HOSNATUL FERDOUS · CSE</span></div><div class="float f1">✳ <div><b>AI & Machine Learning</b><small>Curiosity in motion</small></div></div><div class="float f2">⌁ <div><b>Data & Innovation</b><small>Ideas into impact</small></div></div><label>INTERACTIVE DIGITAL UNIVERSE <span>01 / 06</span></label></div><a class="scroll" href="#about">— SCROLL TO EXPLORE</a></section>
-<section class="section wrap" id="about"><div class="kicker">01 / ABOUT ME <span></span> A little context</div><div class="two"><h2>Technology is powerful<br>when it <em>helps people.</em></h2><div class="copy"><p class="big">I’m a final-year Computer Science undergraduate at Southeast University with a strong academic foundation and a growing interest in technology-led problem solving.</p><p>I enjoy exploring artificial intelligence, data analysis, cybersecurity, web technologies, IoT, and blockchain. I’m especially interested in digital innovation that can contribute to sustainable development and positive social impact.</p><p>My work experience has helped me develop discipline, attention to detail, teamwork, and the ability to deliver under deadlines. I’m eager to keep learning, collaborate, and turn new knowledge into useful projects.</p><b class="signature">Learning with purpose ✦</b></div></div></section>
-<section class="section wrap" id="focus"><div class="kicker">02 / AREAS OF INTEREST <span></span> What inspires me</div><div class="heading"><h2>A universe of <em>possibilities.</em></h2><p>Areas I’m interested in developing through coursework, hands-on practice, and future research.</p></div><div class="cards">
-<article class="focus reveal"><label>01</label><b class="symbol">✳</b><h3>AI & Machine Learning</h3><p>Exploring intelligent systems, machine learning methods, and data-informed solutions.</p><small>AI · ML · Intelligent systems</small></article>
-<article class="focus reveal"><label>02</label><b class="symbol cyan">⌘</b><h3>Data Analysis & Mining</h3><p>Finding useful patterns in data and understanding how analysis supports decisions.</p><small>Data · Patterns · Insights</small></article>
-<article class="focus reveal"><label>03</label><b class="symbol pink">◈</b><h3>Cybersecurity</h3><p>Learning about secure systems, digital safety, and protecting information.</p><small>Security · Privacy</small></article>
-<article class="focus reveal"><label>04</label><b class="symbol gold">⌁</b><h3>IoT & Smart Systems</h3><p>Interested in connected devices, sensing, monitoring, and technology for efficiency.</p><small>IoT · Monitoring</small></article>
-<article class="focus reveal"><label>05</label><b class="symbol green">⌘</b><h3>Web & Software</h3><p>Building understanding of web technologies and practical software solutions.</p><small>Web · Software</small></article>
-<article class="focus reveal"><label>06</label><b class="symbol violet">◇</b><h3>Blockchain Technology</h3><p>Exploring decentralized technologies and their possible uses in digital trust.</p><small>Blockchain · Identity</small></article></div></section>
-<section class="section wrap" id="projects"><div class="kicker">03 / PROJECT DIRECTIONS <span></span> Ideas in progress</div><div class="heading"><h2>Turning questions into<br><em>possibilities.</em></h2><p>These are concepts or proposed directions, not claims of completed work. Update their status as development progresses.</p></div><div class="projects">
-<article class="project reveal"><div class="art solar"><div class="sun"></div><div class="panel"></div><label>ENERGY / IOT</label></div><div class="project-copy"><small>01 — SMART SYSTEMS</small><h3>Smart Solar Tracking & Energy Monitoring</h3><p>A proposed system for tracking sunlight and monitoring solar energy output using sensors and a microcontroller.</p><div class="tags">ESP32 <span>Sensors</span><span>IoT</span></div><footer>● Concept / development direction</footer></div></article>
-<article class="project reveal"><div class="art neural"><div class="brain">AI</div><i></i><i></i><i></i><i></i><label>DATA / SUSTAINABILITY</label></div><div class="project-copy"><small>02 — INTELLIGENT ENERGY</small><h3>AI-Based Energy Saving</h3><p>An idea to explore how energy-use data could help identify waste and support smarter consumption decisions.</p><div class="tags">Machine Learning <span>Analytics</span></div><footer>● Concept / development direction</footer></div></article>
-<article class="project reveal"><div class="art security"><div class="shield">✓</div><label>SECURITY / EXPLORATION</label></div><div class="project-copy"><small>03 — CLOUD SECURITY</small><h3>AI-Assisted Cloud Security</h3><p>An exploration of how AI-assisted analysis might help identify configuration risks and prioritize security findings.</p><div class="tags">Cloud <span>AI Security</span></div><footer>● Research interest / proposed direction</footer></div></article></div></section>
-<section class="section wrap" id="journey"><div class="kicker">04 / MY JOURNEY <span></span> Education & experience</div><div class="two journey"><div><div class="heading"><h2>Building a strong<br><em>foundation.</em></h2><p>Each step is part of a bigger learning journey.</p></div><div class="timeline">
-<article><label>2023 — 2027 · EXPECTED</label><h3>BSc in Computer Science</h3><p>Southeast University · Tejgaon, Dhaka</p><span>CGPA 3.70 / 4.00</span></article>
-<article><label>2020</label><h3>Higher Secondary Certificate</h3><p>Shaheed Anwar Girls College · Science</p><span>GPA 5.00 / 5.00</span></article>
-<article><label>2018</label><h3>Secondary School Certificate</h3><p>Suti VM Pilot Model High School · Science</p><span>GPA 5.00 / 5.00</span></article></div></div>
-<aside class="experience"><div class="exp-icon">↗</div><label>PROFESSIONAL EXPERIENCE</label><h3>Pasting Assistant</h3><p>Dainik Jay Jay Din</p><small>JAN 2023 — DEC 2024 · 2 YEARS</small><p class="exp-text">Supported daily publication workflows, prepared equipment, organized processes, and maintained quality standards while working to strict deadlines.</p><div class="tags">Teamwork <span>Attention to detail</span><span>Time management</span></div><hr><small>TRANSFERABLE SKILLS ✦</small></aside></div></section>
-<section class="section wrap"><div class="beyond reveal"><div><div class="kicker">BEYOND THE CLASSROOM</div><h2>Curiosity keeps<br><em>me moving.</em></h2><p>Outside my studies, I enjoy exploring ideas, learning from new experiences, and making space for creativity.</p></div><div class="hobbies"><span>Technology research</span><span>Reading</span><span>Travelling</span><span>Cooking</span><span>Music</span></div></div></section>
-<section class="contact" id="contact"><div class="wrap reveal"><div class="kicker">05 / LET'S CONNECT</div><h2>Have an idea?<br><em>Let's start a conversation.</em></h2><p>I’m open to learning opportunities, collaboration, and conversations around technology and social impact.</p><div class="actions center"><a class="btn primary" href="mailto:ferdous.5424@gmail.com">Email me ↗</a><a class="btn outline" href="https://github.com/hosnatulferdous" target="_blank" rel="noopener">GitHub ↗</a><a class="btn outline" href="#" id="linkedin">LinkedIn ↗</a><a class="btn outline" href="assets/Hosnatul_Ferdous_CV.pdf" download>CV PDF ↓</a></div><div class="email">ferdous.5424@gmail.com</div></div></section>
-</main><footer class="wrap footer"><a class="logo" href="#home"><b>H<span>.</span></b> HOSNATUL FERDOUS</a><p>Built with curiosity. Designed for impact.</p><a href="#home">BACK TO TOP ↑</a><small>© <span id="year"></span> Hosnatul Ferdous</small></footer>
-<script type="module" src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosnatul Ferdous — Portfolio</title>
+  <meta name="description" content="Computer Science Student | Aspiring AI/ML Engineer & Creative Designer" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070C18',
+            cardBg: '#0D1424',
+            cardBorder: 'rgba(255, 255, 255, 0.07)',
+            accentBlue: '#3B82F6',
+            electricCyan: '#06B6D4',
+            subtleViolet: '#8B5CF6',
+            glowText: '#E0E7FF'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Three.js for Lightweight Mobile-Optimized 3D Scene -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    body {
+      background-color: #070C18;
+      color: #94A3B8;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(13, 20, 36, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.3);
+      box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.1);
+    }
+    #canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 50%, #60A5FA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-num {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #38BDF8;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Sticky Responsive Header -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-card px-6 py-4 flex justify-between items-center border-b border-white/5">
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-accentBlue to-electricCyan flex items-center justify-center text-white font-bold text-sm">H</div>
+      <span class="text-white font-semibold tracking-wider text-sm hidden sm:inline-block">HOSNATUL FERDOUS</span>
+    </a>
+    
+    <div class="hidden md:flex space-x-8 text-xs font-medium uppercase tracking-wider text-slate-400">
+      <a href="#about" class="hover:text-electricCyan transition-colors">About</a>
+      <a href="#interests" class="hover:text-electricCyan transition-colors">Interests</a>
+      <a href="#projects" class="hover:text-electricCyan transition-colors">Projects</a>
+      <a href="#journey" class="hover:text-electricCyan transition-colors">Journey</a>
+      <a href="#skills" class="hover:text-electricCyan transition-colors">Skills</a>
+    </div>
+
+    <a href="#contact" class="hidden md:inline-flex items-center gap-2 glass-card hover:bg-white/10 text-white px-4 py-2 rounded-lg text-xs font-semibold border border-white/10 transition-all">
+      <span>Let's Connect</span>
+      <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-electricCyan"></i>
+    </a>
+
+    <!-- Mobile Navigation Toggle -->
+    <button id="menu-btn" class="md:hidden text-slate-300 text-lg focus:outline-none">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full glass-card p-6 flex flex-col space-y-4 z-40 md:hidden border-b border-white/10">
+    <a href="#about" class="mobile-link text-slate-300 text-sm">01 / About</a>
+    <a href="#interests" class="mobile-link text-slate-300 text-sm">02 / Areas of Interest</a>
+    <a href="#projects" class="mobile-link text-slate-300 text-sm">03 / Project Directions</a>
+    <a href="#journey" class="mobile-link text-slate-300 text-sm">04 / My Journey</a>
+    <a href="#skills" class="mobile-link text-slate-300 text-sm">05 / Skills & Creative</a>
+    <a href="#contact" class="mobile-link text-electricCyan font-semibold text-sm">06 / Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+    <div id="canvas-container"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center my-auto">
+      <!-- Profile Card -->
+      <div class="md:col-span-5 flex justify-center">
+        <div class="relative group w-64 h-64 md:w-72 md:h-72">
+          <div class="absolute -inset-1 bg-gradient-to-r from-accentBlue via-electricCyan to-subtleViolet rounded-3xl blur-md opacity-30 group-hover:opacity-60 transition duration-700"></div>
+          <div class="relative w-full h-full rounded-3xl overflow-hidden glass-card p-2 border border-white/10">
+            <img src="images/profile.jpg" alt="Hosnatul Ferdous" class="w-full h-full object-cover rounded-2xl" onerror="this.src='images/profile.png'; this.onerror=null;" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Details -->
+      <div class="md:col-span-7 text-center md:text-left space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-semibold tracking-wider text-electricCyan glass-card rounded-full border border-electricCyan/20">
+          <span class="w-2 h-2 rounded-full bg-electricCyan animate-pulse"></span>
+          CS UNDERGRADUATE & CREATIVE DEVELOPER
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+          Curious mind.<br /><span class="text-gradient">Purposeful technology.</span>
+        </h1>
+        
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl leading-relaxed">
+          Exploring AI, Machine Learning, UI/UX Design, and Media Editing to craft intelligent, visually compelling digital experiences.
+        </p>
+
+        <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4">
+          <a href="#projects" class="bg-electricCyan/10 hover:bg-electricCyan/20 text-electricCyan border border-electricCyan/30 px-6 py-3 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all">
+            Explore Work
+          </a>
+          <a href="#contact" class="glass-card hover:bg-white/10 text-slate-200 px-6 py-3 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 / ABOUT ME -->
+  <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">01 / ABOUT ME</span>
+      <div class="h-[1px] bg-white/10 flex-grow"></div>
+    </div>
+    
+    <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+      <h2 class="text-2xl font-bold text-white mb-2">Driven by Logic, Defined by Creativity</h2>
+      <p>
+        I am a Computer Science undergraduate at Southeast University, Tejgaon, Dhaka (Expected 2027, CGPA 3.70/4.00). My academic focus lies in Artificial Intelligence, Data Analysis, and Cybersecurity.
+      </p>
+      <p>
+        Alongside software development, I am deeply involved in modern Web & UI/UX Design as well as Video & Photo Editing. I believe technical precision combined with creative visual storytelling creates truly impactful digital products.
+      </p>
+    </div>
+  </section>
+
+  <!-- 02 / AREAS OF INTEREST -->
+  <section id="interests" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="flex items-center gap-4 mb-4">
+      <span class="section-num">02 / AREAS OF INTEREST</span>
+      <div class="h-[1px] bg-white/10 flex-grow"></div>
+      <span class="text-xs text-slate-500 font-mono">What inspires me</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">A universe of <span class="text-gradient">possibilities.</span></h2>
+    <p class="text-xs sm:text-sm text-slate-400 mb-10 max-w-2xl">Areas I'm interested in developing through coursework, hands-on practice, and future research.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="w-10 h-10 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-asterisk"></i>
+            </div>
+            <span class="text-[10px] font-mono text-slate-600">01</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">AI & Machine Learning</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Exploring intelligent systems, machine learning methods, and data-informed solutions.</p>
+        </div>
+        <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">AI • ML • Intelligent systems</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="w-10 h-10 rounded-xl bg-electricCyan/10 flex items-center justify-center text-electricCyan group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-command"></i>
+            </div>
+            <span class="text-[10px] font-mono text-slate-600">02</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Data Analysis & Mining</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Finding useful patterns in data and understanding how analysis supports decisions.</p>
+        </div>
+        <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">Data • Patterns • Insights</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="w-10 h-10 rounded-xl bg-subtleViolet/10 flex items-center justify-center text-subtleViolet group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <span class="text-[10px] font-mono text-slate-600">03</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Cybersecurity</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Learning about secure systems, digital safety, and protecting information.</p>
+        </div>
+        <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">Security • Privacy</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <span class="text-[10px] font-mono text-slate-600">04</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">IoT & Smart Systems</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Interested in connected devices, sensing, monitoring, and technology for efficiency.</p>
+        </div>
+        <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">IoT • Monitoring</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <span class="text-[10px] font-mono text-slate-600">05</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Web Design & UI/UX</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Crafting aesthetically appealing, responsive web layouts and user-centric interfaces.</p>
+        </div>
+        <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">UI/UX • Design • Web</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-film"></i>
+            </div>
+            <span class="text-[10px] font-mono text-slate-600">06</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Media & Video Editing</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Creative post-production, visual effects, and multimedia content creation.</p>
+        </div>
+        <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">Editing • Video • Graphics</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 03 / PROJECT DIRECTIONS -->
+  <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="flex items-center gap-4 mb-4">
+      <span class="section-num">03 / PROJECT DIRECTIONS</span>
+      <div class="h-[1px] bg-white/10 flex-grow"></div>
+      <span class="text-xs text-slate-500 font-mono">Ideas in progress</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Turning questions into <span class="text-gradient">possibilities.</span></h2>
+    <p class="text-xs sm:text-sm text-slate-400 mb-10 max-w-2xl">These are concepts or proposed directions, not claims of completed work. Update their status as development progresses.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Project 1 -->
+      <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
+        <div>
+          <div class="h-32 rounded-xl bg-gradient-to-br from-amber-500/10 to-slate-900 border border-white/5 flex items-center justify-center mb-6">
+            <i class="fa-solid fa-solar-panel text-amber-400 text-4xl"></i>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-2">ENERGY / IOT</div>
+          <h3 class="text-base font-bold text-white mb-2">Smart Solar Tracking & Energy Monitoring</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">A proposed system for tracking sunlight and monitoring solar energy output using sensors and microcontrollers.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">ESP32</span>
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">Sensors</span>
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">IoT</span>
+          </div>
+          <div class="text-[10px] font-mono text-electricCyan">• Concept / development direction</div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
+        <div>
+          <div class="h-32 rounded-xl bg-gradient-to-br from-electricCyan/10 to-slate-900 border border-white/5 flex items-center justify-center mb-6">
+            <i class="fa-solid fa-brain text-electricCyan text-4xl"></i>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-2">DATA / SUSTAINABILITY</div>
+          <h3 class="text-base font-bold text-white mb-2">AI-Based Energy Saving</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">An idea to explore how energy-use data could help identify waste and support smarter consumption decisions.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">Machine Learning</span>
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">Analytics</span>
+          </div>
+          <div class="text-[10px] font-mono text-electricCyan">• Concept / development direction</div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
+        <div>
+          <div class="h-32 rounded-xl bg-gradient-to-br from-subtleViolet/10 to-slate-900 border border-white/5 flex items-center justify-center mb-6">
+            <i class="fa-solid fa-shield-cat text-subtleViolet text-4xl"></i>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-2">SECURITY / EXPLORATION</div>
+          <h3 class="text-base font-bold text-white mb-2">AI-Assisted Cloud Security</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">An exploration of how AI-assisted analysis might help identify configuration risks and prioritize security findings.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">Cloud</span>
+            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300">AI Security</span>
+          </div>
+          <div class="text-[10px] font-mono text-electricCyan">• Research interest / proposed direction</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 / MY JOURNEY -->
+  <section id="journey" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="flex items-center gap-4 mb-4">
+      <span class="section-num">04 / MY JOURNEY</span>
+      <div class="h-[1px] bg-white/10 flex-grow"></div>
+      <span class="text-xs text-slate-500 font-mono">Education</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Building a strong <span class="text-gradient">foundation.</span></h2>
+    <p class="text-xs sm:text-sm text-slate-400 mb-10 max-w-2xl">Each step is part of a bigger learning journey.</p>
+
+    <!-- Timeline Container -->
+    <div class="relative pl-6 sm:pl-8 border-l border-electricCyan/30 space-y-10">
+      
+      <!-- Timeline Item 1 -->
+      <div class="relative">
+        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-electricCyan ring-4 ring-midnight"></div>
+        <div class="text-[11px] font-mono text-electricCyan mb-1">2023 — 2027 • EXPECTED</div>
+        <h3 class="text-xl font-bold text-white">BSc in Computer Science</h3>
+        <p class="text-xs sm:text-sm text-slate-400 mb-3">Southeast University • Tejgaon, Dhaka</p>
+        <span class="inline-block px-3 py-1 rounded-md text-xs font-semibold bg-electricCyan/10 border border-electricCyan/30 text-electricCyan">
+          CGPA 3.70 / 4.00
+        </span>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="relative">
+        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-electricCyan ring-4 ring-midnight"></div>
+        <div class="text-[11px] font-mono text-electricCyan mb-1">2020</div>
+        <h3 class="text-xl font-bold text-white">Higher Secondary Certificate</h3>
+        <p class="text-xs sm:text-sm text-slate-400 mb-3">Shaheed Anwar Girls College • Science</p>
+        <span class="inline-block px-3 py-1 rounded-md text-xs font-semibold bg-electricCyan/10 border border-electricCyan/30 text-electricCyan">
+          GPA 5.00 / 5.00
+        </span>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="relative">
+        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-electricCyan ring-4 ring-midnight"></div>
+        <div class="text-[11px] font-mono text-electricCyan mb-1">2018</div>
+        <h3 class="text-xl font-bold text-white">Secondary School Certificate</h3>
+        <p class="text-xs sm:text-sm text-slate-400 mb-3">Suti VM Pilot Model High School • Science</p>
+        <span class="inline-block px-3 py-1 rounded-md text-xs font-semibold bg-electricCyan/10 border border-electricCyan/30 text-electricCyan">
+          GPA 5.00 / 5.00
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 / SKILLS & CREATIVE -->
+  <section id="skills" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="flex items-center gap-4 mb-4">
+      <span class="section-num">05 / SKILLS & CREATIVE</span>
+      <div class="h-[1px] bg-white/10 flex-grow"></div>
+      <span class="text-xs text-slate-500 font-mono">Capabilities</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-10">Technical & <span class="text-gradient">Media Expertise.</span></h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
+      <!-- Tech Skills -->
+      <div class="glass-card p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-laptop-code text-electricCyan"></i> Technical Skills
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">HTML5 / CSS3 / JavaScript</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Tailwind CSS</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Python / C++</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Data Structures & Algorithms</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Git & GitHub</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Networking & Security</span>
+        </div>
+      </div>
+
+      <!-- Creative & Editing Skills -->
+      <div class="glass-card p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-palette text-subtleViolet"></i> Creative & Media Skills
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">UI/UX & Web Design</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Video Editing & Motion</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Graphic & Layout Design</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Photo Post-Processing</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Content Creation</span>
+        </div>
+      </div>
+
+      <!-- Core Strengths -->
+      <div class="glass-card p-6 rounded-2xl sm:col-span-2">
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-brain text-accentBlue"></i> Soft Skills & Hobbies
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div>
+            <p class="font-semibold text-slate-200 mb-1">Core Strengths:</p>
+            <p class="text-slate-400">Analytical thinking, attention to detail, teamwork, adaptability, time management.</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-200 mb-1">Hobbies & Personal Interests:</p>
+            <p class="text-slate-400">Technology research, reading, travelling, cooking, playing piano and singing.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 / LET'S CONNECT -->
+  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
+    <div class="text-center mb-6">
+      <span class="section-num">06 / LET'S CONNECT</span>
+    </div>
+
+    <h2 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+      Have an idea?<br /><span class="text-gradient">Let's start a conversation.</span>
+    </h2>
+
+    <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto mb-10">
+      I'm open to learning opportunities, collaboration, and conversations around technology and social impact.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6">
+      <a href="mailto:ferdous.5424@gmail.com" class="px-5 py-3 rounded-xl bg-electricCyan text-midnight font-bold text-xs hover:bg-cyan-300 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+        <span>Email me</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      </a>
+
+      <a href="https://github.com/hosnatulferdous" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white text-xs font-semibold hover:bg-white/10 transition-all flex items-center gap-2">
+        <span>GitHub</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      </a>
+
+      <a href="#" class="px-5 py-3 rounded-xl glass-card text-white text-xs font-semibold hover:bg-white/10 transition-all flex items-center gap-2">
+        <span>LinkedIn</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      </a>
+
+      <a href="#" class="px-5 py-3 rounded-xl glass-card text-white text-xs font-semibold hover:bg-white/10 transition-all flex items-center gap-2">
+        <span>CV PDF</span>
+        <i class="fa-solid fa-arrow-down text-[10px]"></i>
+      </a>
+    </div>
+
+    <div class="text-xs text-slate-500 font-mono">ferdous.5424@gmail.com</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5 px-6 max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs text-slate-600 gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-6 h-6 rounded bg-white/10 flex items-center justify-center text-white font-bold text-xs">H</div>
+      <span class="font-bold text-slate-400">HOSNATUL FERDOUS</span>
+    </div>
+    
+    <div>Built with curiosity. Designed for impact.</div>
+
+    <a href="#home" class="hover:text-slate-400 font-mono tracking-widest text-[10px] uppercase">BACK TO TOP ↑</a>
+  </footer>
+
+  <!-- Lightweight Three.js Animation Script -->
+  <script>
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    container.appendChild(renderer.domElement);
+
+    // Dynamic 3D Icosahedron
+    const geometry = new THREE.IcosahedronGeometry(2.8, 1);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x06B6D4,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.25
+    });
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+    // Floating Ambient Particles
+    const particlesGeo = new THREE.BufferGeometry();
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 120 : 250;
+    const posArray = new Float32Array(count * 3);
+
+    for(let i=0; i<count*3; i++) {
+      posArray[i] = (Math.random() - 0.5) * 12;
+    }
+    particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const particlesMat = new THREE.PointsMaterial({
+      size: 0.03,
+      color: 0x3B82F6,
+      transparent: true,
+      opacity: 0.6
+    });
+    const particlesMesh = new THREE.Points(particlesGeo, particlesMat);
+    scene.add(particlesMesh);
+
+    camera.position.z = 6;
+
+    // Smooth Render Loop
+    function animate() {
+      requestAnimationFrame(animate);
+      sphere.rotation.x += 0.002;
+      sphere.rotation.y += 0.003;
+      particlesMesh.rotation.y -= 0.0008;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Window Resize Optimization
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Mobile Navigation Drawer Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
