@@ -1,30 +1,30 @@
-# Hosnatul Ferdous — Portfolio Website
+# Hosnatul Ferdous — 3D Portfolio
 
-A responsive, dark navy/blue personal portfolio built with HTML, CSS, and vanilla JavaScript.
+Responsive personal portfolio with an interactive Three.js hero scene.
 
 ## Files
-- `index.html` — portfolio content and sections
-- `style.css` — responsive styling and animations
-- `script.js` — mobile navigation, reveal animations, footer year
-- `assets/profile.jpg` — supplied profile photo
-- `assets/Hosnatul_Ferdous_CV.pdf` — supplied CV download
+- `index.html` — content and sections
+- `style.css` — layout, responsive styling, visual effects
+- `script.js` — Three.js scene and interactions
+- `assets/profile.jpg` — supplied portrait
+- `assets/Hosnatul_Ferdous_CV.pdf` — CV used by the download button
 
-## Publish with GitHub Pages
-1. Extract this ZIP file.
-2. Open your GitHub repository: `my-portfolio`.
-3. Upload/replace `index.html`, `style.css`, and `script.js` in the repository root.
-4. Upload the `assets` folder with both files inside it. Keep the folder name exactly `assets`.
-5. Go to **Settings → Pages**.
-6. Under **Build and deployment**, select **Deploy from a branch**.
-7. Choose branch `main` and folder `/(root)`, then click **Save**.
-8. Wait for the Pages deployment to finish. Your expected URL is:
-   `https://hosnatulferdous.github.io/my-portfolio/`
+## Preview locally
+This site uses JavaScript modules, so serve it through a local web server rather than double-clicking `index.html`.
+- VS Code: open the folder, install Live Server, right-click `index.html` → Open with Live Server.
+- Or run `python -m http.server 8000` from this folder and open `http://localhost:8000`.
+Three.js is loaded from jsDelivr CDN, so internet access is required for the 3D scene.
+
+## Publish on GitHub Pages
+1. Extract this ZIP.
+2. Open https://github.com/hosnatulferdous/my-portfolio
+3. Upload `index.html`, `style.css`, `script.js`, and the entire `assets` folder to the repository root.
+4. Replace old same-named files if prompted and commit changes to `main`.
+5. Go to Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save.
+6. After deployment, visit https://hosnatulferdous.github.io/my-portfolio/
 
 ## Before publishing
-- Add your LinkedIn profile URL in `script.js` as noted in the comment.
-- Check that your email and GitHub links are correct.
-- Project cards are marked as concepts/proposed directions, not completed work. Update them only with projects you have actually completed or formally started.
-- The CV PDF is included for the download button. Replace it if you later update your CV.
-
-## Privacy
-The CV includes personal contact details. Since this repository is public, those details and the CV download will be visible to anyone visiting the website. Remove anything you do not want to publish publicly before uploading.
+- Add your actual LinkedIn URL to the `linkedinUrl` variable in `script.js`.
+- The CV PDF contains contact information; a public repository makes it accessible to anyone. Remove personal details you do not want public.
+- Project cards are labeled as concepts/proposed directions. Update status only when accurate.
+- No build step is required for GitHub Pages.
