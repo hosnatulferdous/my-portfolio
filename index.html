@@ -15,35 +15,33 @@
           colors: {
             midnight: '#070C18',
             cardBg: '#0D1424',
-            cardBorder: 'rgba(255, 255, 255, 0.07)',
             accentBlue: '#3B82F6',
             electricCyan: '#06B6D4',
-            subtleViolet: '#8B5CF6',
-            glowText: '#E0E7FF'
+            subtleViolet: '#8B5CF6'
           }
         }
       }
     }
   </script>
 
-  <!-- Font Awesome Icons & Google Fonts -->
+  <!-- Font Awesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Three.js for Lightweight Mobile-Optimized 3D Scene -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Three.js Module Bundle -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.module.min.js"
+      }
+    }
+  </script>
 
   <style>
-    * {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    body {
-      background-color: #070C18;
-      color: #94A3B8;
-      overflow-x: hidden;
-    }
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: #070C18; color: #94A3B8; overflow-x: hidden; }
     .glass-card {
       background: rgba(13, 20, 36, 0.85);
       backdrop-filter: blur(12px);
@@ -54,27 +52,19 @@
       border-color: rgba(6, 182, 212, 0.3);
       box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.1);
     }
-    #canvas-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
+    #stage { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: auto; }
+    #scene { width: 100%; height: 100%; display: block; }
     .text-gradient {
       background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 50%, #60A5FA 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .section-num {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      color: #38BDF8;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+    .section-num { font-size: 0.75rem; letter-spacing: 0.15em; color: #38BDF8; font-weight: 600; text-transform: uppercase; }
+    
+    /* Scroll Reveal Styling */
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    #nav.open { display: flex !important; }
   </style>
 </head>
 <body class="relative">
@@ -99,29 +89,32 @@
       <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-electricCyan"></i>
     </a>
 
-    <!-- Mobile Navigation Toggle -->
-    <button id="menu-btn" class="md:hidden text-slate-300 text-lg focus:outline-none">
+    <!-- Mobile Menu Button -->
+    <button id="menu" class="md:hidden text-slate-300 text-lg focus:outline-none">
       <i class="fa-solid fa-bars"></i>
     </button>
   </nav>
 
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full glass-card p-6 flex flex-col space-y-4 z-40 md:hidden border-b border-white/10">
-    <a href="#about" class="mobile-link text-slate-300 text-sm">01 / About</a>
-    <a href="#interests" class="mobile-link text-slate-300 text-sm">02 / Areas of Interest</a>
-    <a href="#projects" class="mobile-link text-slate-300 text-sm">03 / Project Directions</a>
-    <a href="#journey" class="mobile-link text-slate-300 text-sm">04 / My Journey</a>
-    <a href="#skills" class="mobile-link text-slate-300 text-sm">05 / Skills & Creative</a>
-    <a href="#contact" class="mobile-link text-electricCyan font-semibold text-sm">06 / Contact</a>
+  <!-- Mobile Dropdown Navigation -->
+  <div id="nav" class="hidden fixed top-16 left-0 w-full glass-card p-6 flex-col space-y-4 z-40 md:hidden border-b border-white/10">
+    <a href="#about" class="text-slate-300 text-sm">01 / About</a>
+    <a href="#interests" class="text-slate-300 text-sm">02 / Areas of Interest</a>
+    <a href="#projects" class="text-slate-300 text-sm">03 / Project Directions</a>
+    <a href="#journey" class="text-slate-300 text-sm">04 / My Journey</a>
+    <a href="#skills" class="text-slate-300 text-sm">05 / Skills & Creative</a>
+    <a href="#contact" class="text-electricCyan font-semibold text-sm">06 / Contact</a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with 3D Canvas Stage -->
   <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
-    <div id="canvas-container"></div>
+    <div id="stage">
+      <canvas id="scene"></canvas>
+    </div>
     
-    <div class="relative z-10 max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center my-auto">
+    <div class="relative z-10 max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center my-auto pointer-events-none">
+      
       <!-- Profile Card -->
-      <div class="md:col-span-5 flex justify-center">
+      <div class="md:col-span-5 flex justify-center pointer-events-auto">
         <div class="relative group w-64 h-64 md:w-72 md:h-72">
           <div class="absolute -inset-1 bg-gradient-to-r from-accentBlue via-electricCyan to-subtleViolet rounded-3xl blur-md opacity-30 group-hover:opacity-60 transition duration-700"></div>
           <div class="relative w-full h-full rounded-3xl overflow-hidden glass-card p-2 border border-white/10">
@@ -130,8 +123,8 @@
         </div>
       </div>
 
-      <!-- Hero Details -->
-      <div class="md:col-span-7 text-center md:text-left space-y-5">
+      <!-- Hero Content -->
+      <div class="md:col-span-7 text-center md:text-left space-y-5 pointer-events-auto">
         <div class="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-semibold tracking-wider text-electricCyan glass-card rounded-full border border-electricCyan/20">
           <span class="w-2 h-2 rounded-full bg-electricCyan animate-pulse"></span>
           CS UNDERGRADUATE & CREATIVE DEVELOPER
@@ -158,7 +151,7 @@
   </section>
 
   <!-- 01 / ABOUT ME -->
-  <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
+  <section id="about" class="py-20 px-6 max-w-5xl mx-auto reveal">
     <div class="flex items-center gap-4 mb-8">
       <span class="section-num">01 / ABOUT ME</span>
       <div class="h-[1px] bg-white/10 flex-grow"></div>
@@ -176,7 +169,7 @@
   </section>
 
   <!-- 02 / AREAS OF INTEREST -->
-  <section id="interests" class="py-20 px-6 max-w-5xl mx-auto">
+  <section id="interests" class="py-20 px-6 max-w-5xl mx-auto reveal">
     <div class="flex items-center gap-4 mb-4">
       <span class="section-num">02 / AREAS OF INTEREST</span>
       <div class="h-[1px] bg-white/10 flex-grow"></div>
@@ -188,7 +181,6 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <!-- Card 1 -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
         <div>
           <div class="flex justify-between items-center mb-6">
@@ -203,7 +195,6 @@
         <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">AI • ML • Intelligent systems</div>
       </div>
 
-      <!-- Card 2 -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
         <div>
           <div class="flex justify-between items-center mb-6">
@@ -218,7 +209,6 @@
         <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">Data • Patterns • Insights</div>
       </div>
 
-      <!-- Card 3 -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
         <div>
           <div class="flex justify-between items-center mb-6">
@@ -233,7 +223,6 @@
         <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">Security • Privacy</div>
       </div>
 
-      <!-- Card 4 -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
         <div>
           <div class="flex justify-between items-center mb-6">
@@ -248,7 +237,6 @@
         <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">IoT • Monitoring</div>
       </div>
 
-      <!-- Card 5 -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
         <div>
           <div class="flex justify-between items-center mb-6">
@@ -263,7 +251,6 @@
         <div class="text-[10px] font-mono text-slate-500 border-t border-white/5 pt-3">UI/UX • Design • Web</div>
       </div>
 
-      <!-- Card 6 -->
       <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-56 group">
         <div>
           <div class="flex justify-between items-center mb-6">
@@ -282,7 +269,7 @@
   </section>
 
   <!-- 03 / PROJECT DIRECTIONS -->
-  <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
+  <section id="projects" class="py-20 px-6 max-w-5xl mx-auto reveal">
     <div class="flex items-center gap-4 mb-4">
       <span class="section-num">03 / PROJECT DIRECTIONS</span>
       <div class="h-[1px] bg-white/10 flex-grow"></div>
@@ -294,7 +281,6 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
-      <!-- Project 1 -->
       <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
         <div>
           <div class="h-32 rounded-xl bg-gradient-to-br from-amber-500/10 to-slate-900 border border-white/5 flex items-center justify-center mb-6">
@@ -314,7 +300,6 @@
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
         <div>
           <div class="h-32 rounded-xl bg-gradient-to-br from-electricCyan/10 to-slate-900 border border-white/5 flex items-center justify-center mb-6">
@@ -333,7 +318,6 @@
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
         <div>
           <div class="h-32 rounded-xl bg-gradient-to-br from-subtleViolet/10 to-slate-900 border border-white/5 flex items-center justify-center mb-6">
@@ -356,7 +340,7 @@
   </section>
 
   <!-- 04 / MY JOURNEY -->
-  <section id="journey" class="py-20 px-6 max-w-5xl mx-auto">
+  <section id="journey" class="py-20 px-6 max-w-5xl mx-auto reveal">
     <div class="flex items-center gap-4 mb-4">
       <span class="section-num">04 / MY JOURNEY</span>
       <div class="h-[1px] bg-white/10 flex-grow"></div>
@@ -366,10 +350,7 @@
     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Building a strong <span class="text-gradient">foundation.</span></h2>
     <p class="text-xs sm:text-sm text-slate-400 mb-10 max-w-2xl">Each step is part of a bigger learning journey.</p>
 
-    <!-- Timeline Container -->
     <div class="relative pl-6 sm:pl-8 border-l border-electricCyan/30 space-y-10">
-      
-      <!-- Timeline Item 1 -->
       <div class="relative">
         <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-electricCyan ring-4 ring-midnight"></div>
         <div class="text-[11px] font-mono text-electricCyan mb-1">2023 — 2027 • EXPECTED</div>
@@ -380,7 +361,6 @@
         </span>
       </div>
 
-      <!-- Timeline Item 2 -->
       <div class="relative">
         <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-electricCyan ring-4 ring-midnight"></div>
         <div class="text-[11px] font-mono text-electricCyan mb-1">2020</div>
@@ -391,7 +371,6 @@
         </span>
       </div>
 
-      <!-- Timeline Item 3 -->
       <div class="relative">
         <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-electricCyan ring-4 ring-midnight"></div>
         <div class="text-[11px] font-mono text-electricCyan mb-1">2018</div>
@@ -401,12 +380,11 @@
           GPA 5.00 / 5.00
         </span>
       </div>
-
     </div>
   </section>
 
   <!-- 05 / SKILLS & CREATIVE -->
-  <section id="skills" class="py-20 px-6 max-w-5xl mx-auto">
+  <section id="skills" class="py-20 px-6 max-w-5xl mx-auto reveal">
     <div class="flex items-center gap-4 mb-4">
       <span class="section-num">05 / SKILLS & CREATIVE</span>
       <div class="h-[1px] bg-white/10 flex-grow"></div>
@@ -416,8 +394,6 @@
     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-10">Technical & <span class="text-gradient">Media Expertise.</span></h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      
-      <!-- Tech Skills -->
       <div class="glass-card p-6 rounded-2xl">
         <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
           <i class="fa-solid fa-laptop-code text-electricCyan"></i> Technical Skills
@@ -432,7 +408,6 @@
         </div>
       </div>
 
-      <!-- Creative & Editing Skills -->
       <div class="glass-card p-6 rounded-2xl">
         <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
           <i class="fa-solid fa-palette text-subtleViolet"></i> Creative & Media Skills
@@ -446,7 +421,6 @@
         </div>
       </div>
 
-      <!-- Core Strengths -->
       <div class="glass-card p-6 rounded-2xl sm:col-span-2">
         <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
           <i class="fa-solid fa-brain text-accentBlue"></i> Soft Skills & Hobbies
@@ -462,12 +436,11 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- 06 / LET'S CONNECT -->
-  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
+  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center reveal">
     <div class="text-center mb-6">
       <span class="section-num">06 / LET'S CONNECT</span>
     </div>
@@ -480,7 +453,6 @@
       I'm open to learning opportunities, collaboration, and conversations around technology and social impact.
     </p>
 
-    <!-- Buttons -->
     <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6">
       <a href="mailto:ferdous.5424@gmail.com" class="px-5 py-3 rounded-xl bg-electricCyan text-midnight font-bold text-xs hover:bg-cyan-300 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
         <span>Email me</span>
@@ -492,7 +464,7 @@
         <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
       </a>
 
-      <a href="#" class="px-5 py-3 rounded-xl glass-card text-white text-xs font-semibold hover:bg-white/10 transition-all flex items-center gap-2">
+      <a id="linkedin" href="#" class="px-5 py-3 rounded-xl glass-card text-white text-xs font-semibold hover:bg-white/10 transition-all flex items-center gap-2">
         <span>LinkedIn</span>
         <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
       </a>
@@ -518,80 +490,175 @@
     <a href="#home" class="hover:text-slate-400 font-mono tracking-widest text-[10px] uppercase">BACK TO TOP ↑</a>
   </footer>
 
-  <!-- Lightweight Three.js Animation Script -->
-  <script>
-    const container = document.getElementById('canvas-container');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    container.appendChild(renderer.domElement);
+  <!-- Customized 3D Engine & Interactive Logic -->
+  <script type="module">
+    import * as THREE from 'three';
 
-    // Dynamic 3D Icosahedron
-    const geometry = new THREE.IcosahedronGeometry(2.8, 1);
-    const material = new THREE.MeshBasicMaterial({
-      color: 0x06B6D4,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.25
-    });
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
+    const canvas = document.querySelector('#scene'), stage = document.querySelector('#stage');
 
-    // Floating Ambient Particles
-    const particlesGeo = new THREE.BufferGeometry();
-    const isMobile = window.innerWidth < 768;
-    const count = isMobile ? 120 : 250;
-    const posArray = new Float32Array(count * 3);
+    try {
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+      renderer.setSize(stage.clientWidth, stage.clientHeight, false);
 
-    for(let i=0; i<count*3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 12;
-    }
-    particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    const particlesMat = new THREE.PointsMaterial({
-      size: 0.03,
-      color: 0x3B82F6,
-      transparent: true,
-      opacity: 0.6
-    });
-    const particlesMesh = new THREE.Points(particlesGeo, particlesMat);
-    scene.add(particlesMesh);
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(38, stage.clientWidth / stage.clientHeight, 0.1, 100);
+      camera.position.z = 8;
 
-    camera.position.z = 6;
+      scene.add(new THREE.AmbientLight(0x91a9ff, 1.5));
 
-    // Smooth Render Loop
-    function animate() {
-      requestAnimationFrame(animate);
-      sphere.rotation.x += 0.002;
-      sphere.rotation.y += 0.003;
-      particlesMesh.rotation.y -= 0.0008;
-      renderer.render(scene, camera);
-    }
-    animate();
+      const l1 = new THREE.PointLight(0x62eee8, 18, 20);
+      l1.position.set(2.8, 2.3, 3);
+      scene.add(l1);
 
-    // Window Resize Optimization
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+      const l2 = new THREE.PointLight(0x9277ff, 12, 18);
+      l2.position.set(-3, -1.8, 1);
+      scene.add(l2);
 
-    // Mobile Navigation Drawer Toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+      const group = new THREE.Group();
+      scene.add(group);
 
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+      const core = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1.02, 2),
+        new THREE.MeshPhysicalMaterial({
+          color: 0x6c9dff,
+          metalness: 0.42,
+          roughness: 0.22,
+          transparent: true,
+          opacity: 0.52,
+          emissive: 0x122b66,
+          emissiveIntensity: 0.8,
+          flatShading: true
+        })
+      );
+      core.position.set(1.25, 0, -0.7);
+      group.add(core);
 
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+      const wire = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1.16, 1),
+        new THREE.MeshBasicMaterial({ color: 0x83f5ee, wireframe: true, transparent: true, opacity: 0.4 })
+      );
+      wire.position.copy(core.position);
+      group.add(wire);
+
+      const ring1 = new THREE.Mesh(
+        new THREE.TorusGeometry(1.45, 0.008, 8, 110),
+        new THREE.MeshBasicMaterial({ color: 0x8da9ff, transparent: true, opacity: 0.5 })
+      );
+      ring1.position.copy(core.position);
+      ring1.rotation.set(0.9, 0.25, -0.4);
+      group.add(ring1);
+
+      const ring2 = new THREE.Mesh(
+        new THREE.TorusGeometry(1.65, 0.006, 8, 110),
+        new THREE.MeshBasicMaterial({ color: 0x6ce8e0, transparent: true, opacity: 0.35 })
+      );
+      ring2.position.copy(core.position);
+      ring2.rotation.set(0.1, 1.1, 0.6);
+      group.add(ring2);
+
+      const count = 300;
+      const pos = new Float32Array(count * 3);
+      const col = new Float32Array(count * 3);
+
+      for (let i = 0; i < count; i++) {
+        const r = 1.5 + Math.random() * 2.4;
+        const a = Math.random() * Math.PI * 2;
+        pos[i * 3] = 1.2 + Math.cos(a) * r;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 5.4;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 2.5;
+
+        const c = new THREE.Color().setHSL(0.48 + Math.random() * 0.18, 0.8, 0.58 + Math.random() * 0.2);
+        col.set([c.r, c.g, c.b], i * 3);
+      }
+
+      const pg = new THREE.BufferGeometry();
+      pg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      pg.setAttribute('color', new THREE.BufferAttribute(col, 3));
+
+      const particles = new THREE.Points(
+        pg,
+        new THREE.PointsMaterial({ size: 0.025, vertexColors: true, transparent: true, opacity: 0.8 })
+      );
+      scene.add(particles);
+
+      let tx = 0, ty = 0, px = 0, py = 0;
+      stage.addEventListener('pointermove', e => {
+        const r = stage.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width - 0.5) * 0.5;
+        ty = ((e.clientY - r.top) / r.height - 0.4) * 0.35;
       });
-    });
+      stage.addEventListener('pointerleave', () => { tx = ty = 0; });
+
+      function resize() {
+        const w = stage.clientWidth, h = stage.clientHeight;
+        camera.aspect = w / h;
+        camera.position.z = window.innerWidth < 650 ? 9 : 8;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h, false);
+      }
+      window.addEventListener('resize', resize);
+
+      const clock = new THREE.Clock();
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function render() {
+        requestAnimationFrame(render);
+        const t = clock.getElapsedTime();
+        px += (tx - px) * 0.035;
+        py += (ty - py) * 0.035;
+
+        if (!reduce) {
+          core.rotation.x = t * 0.13 + py;
+          core.rotation.y = t * 0.18 + px;
+          wire.rotation.x = t * 0.13 + py;
+          wire.rotation.y = t * 0.18 + px;
+          group.rotation.y = px * 0.35;
+          group.rotation.x = py * 0.35;
+          particles.rotation.y = t * 0.018;
+          particles.rotation.x = Math.sin(t * 0.12) * 0.05;
+        }
+        renderer.render(scene, camera);
+      }
+      render();
+
+    } catch (e) {
+      console.warn('3D unavailable; CSS fallback active.', e);
+      canvas.style.display = 'none';
+    }
+
+    // Navigation & UI Elements
+    const menu = document.querySelector('#menu'), nav = document.querySelector('#nav');
+    if (menu && nav) {
+      menu.addEventListener('click', () => nav.classList.toggle('open'));
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    }
+
+    // LinkedIn Profile Link Handle
+    const linkedinUrl = '';
+    const linkedin = document.querySelector('#linkedin');
+    if (linkedin) {
+      if (linkedinUrl) {
+        linkedin.href = linkedinUrl;
+        linkedin.target = '_blank';
+        linkedin.rel = 'noopener';
+      } else {
+        linkedin.addEventListener('click', e => {
+          e.preventDefault();
+          alert('Add your LinkedIn profile URL in the script before publishing.');
+        });
+      }
+    }
+
+    // Scroll Reveal Intersection Observer
+    const observer = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    }), { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
