@@ -3,112 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Hosnatul Ferdous — Computer Science student interested in AI, machine learning, data analysis, cybersecurity, and digital innovation." />
-  <meta name="theme-color" content="#10152b" />
-  <title>Hosnatul Ferdous | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Hosnatul Ferdous — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Hosnatul Ferdous home"><span class="brand-mark">H</span><span>Hosnatul<span class="brand-dot">.</span></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav id="navMenu">
-      <a href="#about">About</a><a href="#focus">Interests</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#experience">Experience</a>
-      <a class="nav-contact" href="#contact">Let's connect <span>↗</span></a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse"></span> COMPUTER SCIENCE · DIGITAL INNOVATION</div>
-        <h1>Curious mind.<br><span class="gradient-text">Purposeful technology.</span></h1>
-        <p class="hero-lead">Hi, I'm <strong>Hosnatul Ferdous</strong> — a Computer Science student exploring how AI, data, and emerging technologies can solve meaningful real-world problems.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
-          <a class="button button-ghost" href="assets/Hosnatul_Ferdous_CV.pdf" download>Download CV <span>↓</span></a>
-        </div>
-        <div class="hero-meta">
-          <div><span class="meta-number">3.70<span class="meta-small">/4.00</span></span><span class="meta-label">Current CGPA</span></div>
-          <div class="meta-divider"></div>
-          <div><span class="meta-number">2027</span><span class="meta-label">Expected graduation</span></div>
-          <div class="meta-divider"></div>
-          <div><span class="meta-number">Dhaka</span><span class="meta-label">Bangladesh</span></div>
-        </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">HF<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h3>Hello, I'm</h3>
+      <h1>Hosnatul Ferdous</h1>
+      <h2>Frontend Developer & Web Creator</h2>
+      <p>I build modern, interactive, and user-friendly web applications with clean code and high performance.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn primary-btn">Contact Me</a>
+        <a href="#projects" class="btn secondary-btn">View Work</a>
       </div>
-      <div class="hero-visual reveal">
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="portrait-frame"><img src="assets/profile.jpg" alt="Portrait of Hosnatul Ferdous" /></div>
-        <div class="floating-card card-ai"><span class="float-icon">✳</span><div><strong>AI & Machine Learning</strong><small>Learning · Exploring · Building</small></div></div>
-        <div class="floating-card card-data"><span class="float-icon violet">⌁</span><div><strong>Data & Innovation</strong><small>Ideas into impact</small></div></div>
-        <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+      <div class="social-icons">
+        <a href="https://github.com/hosnatulferdous" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
       </div>
-      <a class="scroll-cue" href="#about"><span class="scroll-line"></span> SCROLL TO EXPLORE</a>
-    </section>
+    </div>
+  </section>
 
-    <section class="section-wrap section-block" id="about">
-      <div class="section-heading reveal"><span class="section-index">01 / ABOUT</span><h2>Technology is most powerful<br>when it <span class="gradient-text">helps people.</span></h2></div>
-      <div class="about-grid">
-        <div class="about-main reveal"><p class="large-copy">I’m a final-year Computer Science undergraduate at Southeast University with a strong academic foundation and a growing interest in technology-led problem solving.</p><p>I enjoy exploring ideas across artificial intelligence, data analysis, cybersecurity, web technologies, IoT, and blockchain. I’m especially interested in digital innovation that can contribute to sustainable development and positive social impact.</p><p>Alongside my studies, my work experience has helped me build discipline, attention to detail, teamwork, and the ability to deliver under deadlines. I’m eager to keep learning, collaborate with others, and turn new knowledge into useful projects.</p></div>
-        <aside class="about-note reveal"><div class="note-icon">✦</div><span class="note-label">MY GUIDING INTEREST</span><h3>Learning with purpose.</h3><p>Building a foundation in technology while looking for ways to create practical, inclusive, and meaningful impact.</p><div class="note-line"></div><span class="note-foot">OPEN TO LEARNING & COLLABORATION</span></aside>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>Welcome to my portfolio! I am a passionate Web Developer focused on crafting beautiful and functional user experiences. I love learning new technologies and solving complex problems through code.</p>
+        <p>Whether it's building responsive layouts, optimizing website performance, or creating interactive UI features, I aim for excellence in every project.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section-wrap section-block" id="focus">
-      <div class="section-heading reveal"><span class="section-index">02 / AREAS OF INTEREST</span><h2>Where curiosity <span class="gradient-text">leads me.</span></h2><p class="section-intro">Areas I’m interested in developing through coursework, hands-on practice, and future research.</p></div>
-      <div class="interest-grid">
-        <article class="interest-card reveal"><div class="interest-top"><span class="interest-icon">✳</span><span class="interest-number">01</span></div><h3>AI & Machine Learning</h3><p>Exploring intelligent systems, machine learning methods, and data-informed solutions.</p><div class="tag-row"><span>AI</span><span>ML</span><span>Learning</span></div></article>
-        <article class="interest-card reveal"><div class="interest-top"><span class="interest-icon cyan">⌘</span><span class="interest-number">02</span></div><h3>Data Analysis & Mining</h3><p>Finding useful patterns in data and understanding how analysis supports decisions.</p><div class="tag-row"><span>Data</span><span>Patterns</span><span>Insights</span></div></article>
-        <article class="interest-card reveal"><div class="interest-top"><span class="interest-icon pink">◈</span><span class="interest-number">03</span></div><h3>Cybersecurity</h3><p>Learning about secure systems, digital safety, and protecting information.</p><div class="tag-row"><span>Security</span><span>Privacy</span></div></article>
-        <article class="interest-card reveal"><div class="interest-top"><span class="interest-icon gold">⌁</span><span class="interest-number">04</span></div><h3>IoT & Smart Systems</h3><p>Interested in connected devices, sensing, monitoring, and technology for efficiency.</p><div class="tag-row"><span>IoT</span><span>Monitoring</span></div></article>
-        <article class="interest-card reveal"><div class="interest-top"><span class="interest-icon green">⌘</span><span class="interest-number">05</span></div><h3>Web & Software</h3><p>Developing an understanding of web technologies and practical software solutions.</p><div class="tag-row"><span>Web</span><span>Software</span></div></article>
-        <article class="interest-card reveal"><div class="interest-top"><span class="interest-icon violet">◇</span><span class="interest-number">06</span></div><h3>Blockchain Technology</h3><p>Exploring decentralized technologies and their possible uses in digital trust.</p><div class="tag-row"><span>Blockchain</span><span>Identity</span></div></article>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-git-alt"></i><h3>Git & GitHub</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-react"></i><h3>React</h3></div>
+      <div class="skill-card"><i class="fa-solid fa-code"></i><h3>Responsive Design</h3></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A sleek dark-mode portfolio built with HTML, CSS, and vanilla JavaScript.</p>
+        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-    </section>
-
-    <section class="section-wrap section-block projects-section" id="projects">
-      <div class="section-heading reveal"><span class="section-index">03 / PROJECTS</span><h2>Ideas in progress.<br><span class="gradient-text">Possibilities ahead.</span></h2><p class="section-intro">A showcase area for academic and personal work. These cards describe project directions, not completed projects; replace them with verified work as you build it.</p></div>
-      <div class="project-grid">
-        <article class="project-card project-feature reveal"><div class="project-art art-solar"><div class="solar-sun"></div><div class="solar-panel"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="solar-base"></div><span class="art-label">SMART SYSTEMS / CONCEPT</span></div><div class="project-body"><div class="project-type">IOT · ENERGY MONITORING</div><h3>Smart Solar Tracking & Energy Monitoring</h3><p>A project direction focused on tracking sunlight and monitoring solar energy output using sensors and a microcontroller.</p><div class="tag-row"><span>ESP32</span><span>Sensors</span><span>IoT</span></div><span class="project-status">Concept / development direction</span></div></article>
-        <article class="project-card reveal"><div class="project-art art-ai"><div class="ai-node node-1"></div><div class="ai-node node-2"></div><div class="ai-node node-3"></div><div class="ai-node node-4"></div><div class="ai-link link-1"></div><div class="ai-link link-2"></div><div class="ai-link link-3"></div><div class="ai-core">AI</div><span class="art-label">DATA / CONCEPT</span></div><div class="project-body"><div class="project-type">AI · SUSTAINABILITY</div><h3>AI-Based Energy Saving</h3><p>An idea to explore how energy-use data could help identify waste and support smarter consumption decisions.</p><div class="tag-row"><span>Machine Learning</span><span>Analytics</span></div><span class="project-status">Concept / development direction</span></div></article>
-        <article class="project-card reveal"><div class="project-art art-security"><div class="shield">✓</div><div class="security-ring ring-one"></div><div class="security-ring ring-two"></div><span class="art-label">SECURITY / EXPLORATION</span></div><div class="project-body"><div class="project-type">CYBERSECURITY · CLOUD</div><h3>Intelligent Cloud Security</h3><p>An exploration of how AI-assisted analysis might help identify configuration risks and prioritize security findings.</p><div class="tag-row"><span>Cloud</span><span>AI Security</span></div><span class="project-status">Research interest / proposed direction</span></div></article>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>E-Commerce Web App</h3>
+        <p>Modern shopping user interface with dynamic product management and responsive design.</p>
+        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-      <p class="project-disclaimer">Note: The project cards above are clearly marked as concepts or areas of exploration. Update their descriptions, status, and links once you have completed or formally started each project.</p>
-    </section>
-
-    <section class="section-wrap section-block" id="education">
-      <div class="section-heading reveal"><span class="section-index">04 / EDUCATION</span><h2>The foundation <span class="gradient-text">I’m building.</span></h2></div>
-      <div class="timeline">
-        <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date">2023 — 2027 · EXPECTED</div><div class="timeline-content"><div class="timeline-title-row"><h3>BSc in Computer Science & Engineering</h3><span class="grade-pill">CGPA 3.70 / 4.00</span></div><p class="institution">Southeast University · Tejgaon, Dhaka</p><p>Final-year undergraduate study focused on computing foundations and exploring technical areas including AI, data analysis, cybersecurity, and software development.</p></div></article>
-        <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date">2020</div><div class="timeline-content"><div class="timeline-title-row"><h3>Higher Secondary Certificate (HSC)</h3><span class="grade-pill">GPA 5.00 / 5.00</span></div><p class="institution">Shaheed Anwar Girls College · Dhaka · Science</p><p>Dhaka Education Board.</p></div></article>
-        <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date">2018</div><div class="timeline-content"><div class="timeline-title-row"><h3>Secondary School Certificate (SSC)</h3><span class="grade-pill">GPA 5.00 / 5.00</span></div><p class="institution">Suti VM Pilot Model High School · Tangail · Science</p><p>Dhaka Education Board.</p></div></article>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>Interactive Dashboard</h3>
+        <p>Clean layout dashboard showcasing analytics and customized data visualizations.</p>
+        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section-wrap section-block" id="experience">
-      <div class="section-heading reveal"><span class="section-index">05 / EXPERIENCE</span><h2>Skills shaped by <span class="gradient-text">real work.</span></h2></div>
-      <div class="experience-card reveal"><div class="experience-symbol">↗</div><div class="experience-content"><div class="experience-meta"><span>JAN 2023 — DEC 2024</span><span class="experience-chip">2 YEARS</span></div><h3>Pasting Assistant</h3><p class="institution">Dainik Jay Jay Din</p><p>Worked with an operational team to support daily publication processes, prepare equipment, organize workflows, and maintain quality under strict deadlines.</p><div class="experience-skills"><span>Teamwork</span><span>Attention to detail</span><span>Time management</span><span>Process coordination</span></div></div></div>
-      <div class="strengths-grid">
-        <div class="strength reveal"><span>01</span><h4>Analytical thinking</h4><p>Approaching problems methodically and looking for structured solutions.</p></div>
-        <div class="strength reveal"><span>02</span><h4>Attention to detail</h4><p>Taking care with accuracy, quality, and task execution.</p></div>
-        <div class="strength reveal"><span>03</span><h4>Collaboration</h4><p>Working productively with others toward shared outcomes.</p></div>
-        <div class="strength reveal"><span>04</span><h4>Adaptability</h4><p>Willing to learn new tools and improve through practice.</p></div>
-      </div>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <p>Feel free to reach out for collaborations or project inquiries!</p>
+    <a href="mailto:your-email@example.com" class="btn primary-btn">Send Email</a>
+  </section>
 
-    <section class="section-wrap section-block beyond-section">
-      <div class="beyond-panel reveal"><div><span class="section-index">A LITTLE MORE</span><h2>Curiosity beyond<br>the classroom.</h2><p>When I’m not studying, I enjoy reading, travelling, cooking, technology research, and music.</p></div><div class="hobby-cloud"><span>Technology research</span><span>Reading</span><span>Travelling</span><span>Cooking</span><span>Music</span></div></div>
-      <div class="language-row reveal"><div><span class="language-label">LANGUAGES</span><h3>Communication matters.</h3></div><div class="language"><div class="language-top"><span>Bengali</span><span>Native</span></div><div class="language-track"><span style="width:100%"></span></div></div><div class="language"><div class="language-top"><span>English</span><span>Upper-intermediate · B2</span></div><div class="language-track"><span style="width:78%"></span></div></div></div>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Hosnatul Ferdous. All rights reserved.</p>
+  </footer>
 
-    <section class="contact-section" id="contact"><div class="section-wrap contact-inner reveal"><span class="section-index">06 / CONTACT</span><h2>Let’s make something<br><span class="gradient-text">meaningful.</span></h2><p>I’m open to learning opportunities, collaboration, and conversations around technology and social impact.</p><div class="contact-actions"><a class="button button-primary" href="mailto:ferdous.5424@gmail.com">Email me <span>↗</span></a><a class="button button-ghost" href="https://github.com/hosnatulferdous" target="_blank" rel="noopener noreferrer">GitHub profile <span>↗</span></a><a class="button button-ghost" href="#" id="linkedinLink">LinkedIn <span>↗</span></a></div><div class="contact-email">ferdous.5424@gmail.com</div></div></section>
-  </main>
-
-  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">H</span><span>Hosnatul<span class="brand-dot">.</span></span></a><p>Built with curiosity and a purpose to keep learning.</p><a class="back-top" href="#home">BACK TO TOP ↑</a><small>© <span id="year"></span> Hosnatul Ferdous</small></footer>
   <script src="script.js"></script>
 </body>
 </html>
